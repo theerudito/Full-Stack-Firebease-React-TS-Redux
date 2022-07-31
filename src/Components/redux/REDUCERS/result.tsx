@@ -3,7 +3,7 @@ const inicialState = {
 };
 
 export const resultReducer = (state = inicialState, action: any) => {
-  console.log(action.type);
+  //console.log(action.type);
   switch (action.type) {
     case "GET_FIREBASE":
       return {
