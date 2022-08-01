@@ -1,6 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Auth } from "../HELPERS/API-FIREBASE";
 import { goRegister } from "../redux/slices";
 
@@ -9,15 +10,18 @@ export const Login = () => {
   const [password, setPassword] = useState("");
 
   const dispach = useDispatch();
+  const navigate = useNavigate();
 
   const LoginFirebase = async (e: any) => {
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(Auth, email, password);
+
       console.log(user);
     } catch (error) {
       console.log(error);
     }
+    navigate("/home");
   };
 
   return (
