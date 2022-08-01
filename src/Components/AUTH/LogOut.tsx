@@ -3,7 +3,6 @@ import { Auth } from "../HELPERS/API-FIREBASE";
 
 export const LogOut = () => {
 
-  
   const logout = async () => {
     await signOut(Auth);
   };
