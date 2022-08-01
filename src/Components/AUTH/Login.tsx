@@ -1,9 +1,14 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Auth } from "../HELPERS/API-FIREBASE";
+import { goRegister } from "../redux/slices";
+
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispach = useDispatch();
 
   const LoginFirebase = async (e: any) => {
     e.preventDefault();
@@ -31,7 +36,15 @@ export const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button onClick={LoginFirebase}>Login</button>
+        <button type="submit" onClick={LoginFirebase}>
+          Login
+        </button>
+        <button
+          type="submit"
+          onClick={(e) => dispach(goRegister(false), e.preventDefault())}
+        >
+          Register
+        </button>
       </form>
     </>
   );

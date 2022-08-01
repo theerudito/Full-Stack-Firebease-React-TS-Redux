@@ -1,22 +1,19 @@
-import React from "react";
+import { useSelector } from "react-redux";
 import { Login } from "../AUTH/Login";
-import { LogOut } from "../AUTH/LogOut";
 import { Register } from "../AUTH/Register";
 import { RegisterByGoogle } from "../AUTH/RegisterByGoogle";
-import { UPLOAD_FIREBASE } from "../UPLOAD-IMAGEN/UPLOAD";
 
 export const PAGE_INDEX = () => {
+  const { login } = useSelector((store: any) => store.crud);
+
   return (
-    <>
+    <div className="containerIndex">
       <RegisterByGoogle />
       <br />
-      <UPLOAD_FIREBASE/>
+      <p>- OR -</p>
       <br />
-      <Register />
-      <br />
-      <Login />
 
-      <LogOut />
-    </>
+      {login ? <Register /> : <Login />}
+    </div>
   );
 };

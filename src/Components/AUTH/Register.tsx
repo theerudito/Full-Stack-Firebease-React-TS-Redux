@@ -4,6 +4,8 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { Auth } from "../HELPERS/API-FIREBASE";
+import { useDispatch, useSelector } from "react-redux";
+import { goLogin } from "../redux/slices";
 
 export const Register = () => {
   const [user, setUser] = useState("");
@@ -14,6 +16,8 @@ export const Register = () => {
   const userRef = useRef<String>();
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  const dispach = useDispatch();
 
   onAuthStateChanged(Auth, (currentUser) => {
     if (currentUser) {
@@ -54,6 +58,12 @@ export const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Register</button>
+        <button
+          type="submit"
+          onClick={(e) => dispach(goLogin(false), e.preventDefault())}
+        >
+          Login
+        </button>
       </form>
       {dataUser?.email}
     </>
