@@ -1,0 +1,48 @@
+.google {
+  background-color: #4285F4;
+  color: white;
+  width: 300px;
+  &:hover {
+    background-color: #357ae8;
+  }
+}
+
+form {
+  display: grid;
+  background-color: rgb(69, 168, 30);
+  border-radius: 5px;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+  background-color: purple;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin: 10px auto;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(158, 88, 158);
+    color: black;
+  }
+}
+
+input {
+  background-color: white;
+  margin: 10px;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+

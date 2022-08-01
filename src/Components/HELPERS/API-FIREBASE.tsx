@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "@firebase/firestore";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAmFbIyYfn5dXMxTeW-U_Afo8PQ6udqjMM",
+  apiKey: import.meta.env.VITE_API_FIREBASE,
   authDomain: "crud-firebase-ts.firebaseapp.com",
   projectId: "crud-firebase-ts",
   storageBucket: "crud-firebase-ts.appspot.com",

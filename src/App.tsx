@@ -1,10 +1,13 @@
 import "./App.css";
-import { DATA_FIREBASE } from "./Components/DATA";
+
+import { PAGE_INDEX } from "./Components/INDEX";
 
 function App() {
-  return <div className="App">
-    <DATA_FIREBASE/>
-  </div>;
+  return (
+    <div className="App">
+      <PAGE_INDEX />
+    </div>
+  );
 }
 
 export default App;

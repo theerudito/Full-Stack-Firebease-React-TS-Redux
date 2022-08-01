@@ -1,28 +1,25 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GET_DATA_FIREBASE } from "./HELPERS/FIREBASE_METHOD";
+import { getDataFibase } from "./redux/slices";
 
 export const DATA_FIREBASE = () => {
   const dispatch = useDispatch();
 
-  const infor = useSelector((store: any) => store.data.result.data);
+  const { crud = [] } = useSelector((store: any) => store.crud);
 
-  const getDataFirebase = async () => {
-    return await GET_DATA_FIREBASE();
+  const GET_FIREBASE = async () => {
+    const data = await GET_DATA_FIREBASE();
+    dispatch(getDataFibase(data));
   };
 
   useEffect(() => {
-    getDataFirebase().then((data: any) => {
-      dispatch({
-        type: "GET_FIREBASE",
-        payload: data,
-      });
-    });
+    GET_FIREBASE();
   }, []);
 
   return (
     <>
-      {infor.map((item: any) => (
+      {crud.map((item: any) => (
         <div key={item.id}>
           <p>
             {item.name} - {item.age}
