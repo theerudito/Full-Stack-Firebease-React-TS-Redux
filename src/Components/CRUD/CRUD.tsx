@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GET_DATA_FIREBASE } from "./HELPERS/FIREBASE_METHOD";
-import { getDataFibase } from "./redux/slices";
+import { GET_DATA_FIREBASE } from "../HELPERS/FIREBASE_METHOD";
+import { MENU } from "../MENU/MENU";
+import { getDataFibase } from "../redux/slices";
 
-export const DATA_FIREBASE = () => {
+export const CRUD = () => {
   const dispatch = useDispatch();
 
   const { crud = [] } = useSelector((store: any) => store.crud);
@@ -19,6 +20,7 @@ export const DATA_FIREBASE = () => {
 
   return (
     <>
+    <MENU/>
       {crud.map((item: any) => (
         <div key={item.id}>
           <p>

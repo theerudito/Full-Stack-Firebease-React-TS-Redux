@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&display=swap");
 
 html {
   background-color: #242424;
-  font-family: 'Roboto Mono', monospace;;
+  font-family: "Roboto Mono", monospace;
   width: 100%;
   height: 100%;
   padding: 0%;
@@ -12,11 +12,30 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+.menuApp {
+  display: flex;
+  gap: 10px;
+}
+
+.menuTitle {
+  background-color: #085ee7;
+  border-radius: 5px;
+  color: white;
+  padding: 0px 5px;
+  font-weight: bold;
+  &:hover {
+    background-color: #4285f4;
+  }
+}
+
+.Link {
+  text-decoration: none;
 }
 
 h1 {
-  color:#fff
+  color: #fff;
 }
 
 .containerDataUser {
@@ -35,27 +54,26 @@ h1 {
 }
 
 .containerProyects {
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 10px 10px 10px 10px;
-gap: 10px;
-
+  display: flex;
+  align-items: center;
+  grid-template-columns: auto;
+  justify-content: center;
+  gap: 10px;
 }
 
-.buttoData {
- width: 70%;
- margin-top: 30px;
+.containerButton {
+  display: flex;
+  gap: 10px;
 }
 
 .infoBody {
-  background-color: #E8EAED;
+  background-color: #e8eaed;
   width: 100%;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  margin: auto;
 }
 
 .photo {
@@ -65,7 +83,6 @@ gap: 10px;
   justify-content: center;
   align-items: center;
 }
-
 
 .or {
   color: #fff;
@@ -94,11 +111,10 @@ gap: 10px;
   margin: auto;
 }
 
-
 form {
   display: grid;
   width: 300px;
-  border: 1px solid #E8EAED;
+  border: 1px solid #e8eaed;
   background-color: white;
   align-items: center;
   justify-content: center;
@@ -119,15 +135,14 @@ button {
   display: flex;
   margin: 10px auto;
   cursor: pointer;
-  color:white;
+  color: white;
   font-weight: bold;
   border: none;
   border-radius: 5px;
   width: 150px;
   height: 30px;
   &:hover {
-    background-color: #4285F4;
-    
+    background-color: #4285f4;
   }
 }
 
@@ -140,4 +155,3 @@ input {
   border: 1px solid silver;
   color: #357ae8;
 }
-

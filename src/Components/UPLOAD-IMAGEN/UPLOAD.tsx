@@ -1,8 +1,9 @@
 import  { useEffect, useState } from "react";
 import { Storage } from "../HELPERS/API-FIREBASE";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import { MENU } from "../MENU/MENU";
 
-export const UPLOAD_FIREBASE = () => {
+export const UPLOAD = () => {
   const [imageUpLoad, setImageUpLoad] = useState<any>(null);
   const [imageUrl, setImageUrl] = useState<[]>([]);
   const generateId = Math.random().toFixed(3);
@@ -36,7 +37,8 @@ export const UPLOAD_FIREBASE = () => {
 
   return (
     <>
-      <p>ULphot</p>
+    <MENU/>
+      <p>UPLOAD</p>
       <input type="file" onChange={(e) => setImageUpLoad(e.target.files[0])} />
       <button onClick={upLoadFirebase}>UPLOAD IMAGE</button>
       {
