@@ -8,12 +8,13 @@ export const PAGE_INDEX = () => {
 
   return (
     <div className="containerIndex">
-      <RegisterByGoogle />
-      <br />
-      <p>- OR -</p>
-      <br />
+      <div className="containerBody">
+        <RegisterByGoogle />
 
-      {login ? <Register /> : <Login />}
+        <p className="or">- OR -</p>
+
+        {login ? <Register /> : <Login />}
+      </div>
     </div>
   );
 };

@@ -4,26 +4,19 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { Auth } from "../HELPERS/API-FIREBASE";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { goLogin } from "../redux/slices";
 
 export const Register = () => {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [dataUser, setDataUser] = useState({});
 
   const userRef = useRef<String>();
   const emailRef = useRef();
   const passwordRef = useRef();
 
   const dispach = useDispatch();
-
-  onAuthStateChanged(Auth, (currentUser) => {
-    if (currentUser) {
-      setDataUser(currentUser);
-    }
-  });
 
   const register = async (e: any) => {
     e.preventDefault();
@@ -65,7 +58,6 @@ export const Register = () => {
           Login
         </button>
       </form>
-      {dataUser?.email}
     </>
   );
 };

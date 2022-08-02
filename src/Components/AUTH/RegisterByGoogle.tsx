@@ -1,5 +1,7 @@
 import { GoogleAuthProvider, signInWithPopup } from "@firebase/auth";
 import { Auth } from "../HELPERS/API-FIREBASE";
+import GoogleButton from "react-google-button";
+import { useNavigate } from "react-router-dom";
 
 // for gemail
 const provider = new GoogleAuthProvider();
@@ -22,22 +24,21 @@ export const signInWithGoogle = () => {
 };
 
 export const RegisterByGoogle = () => {
+  const navigate = useNavigate();
   const loginByGoogle = async (e: any) => {
     e.preventDefault();
     signInWithGoogle();
+
     try {
     } catch (error) {
       console.log(error);
     }
+    navigate("/home");
   };
 
   return (
-    <>
-      <button type="submit" className="google" onClick={loginByGoogle}>
-        Sign up with Google
-      </button>
-
-      <img src={localStorage.getItem("photo")} alt="" />
-    </>
+    <div className="botton_google">
+      <GoogleButton onClick={loginByGoogle} />
+    </div>
   );
 };
