@@ -20,20 +20,40 @@ export const CRUD = () => {
 
   return (
     <>
-    <MENU/>
-      {crud.map((item: any) => (
-        <div key={item.id}>
-          <p>
-            {item.name} - {item.age}
-            <button>
-              <i className="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button>
-              <i className="fa-solid fa-trash-can"></i>
-            </button>
-          </p>
-        </div>
-      ))}
+      <MENU />
+      <form className="containerFormCrud">
+        <input type="text" placeholder="NAME" />
+        <input type="text" placeholder="AGE" />
+        <button>CREATE</button>
+      </form>
+      <div className="containerTitlesCrud">
+        <p>NAME</p>
+        <p>AGE</p>
+        <p>ACTION</p>
+      </div>
+  
+
+      <ul className="containerUlCrud">
+        {crud.map((item: any) => (
+          <>
+          
+            <li key={item.id} className="containerCrud">
+              {item.name}
+            </li>
+            <li key={item.id} className="containerCrud">
+              {item.age}
+            </li>
+            <li>
+              <button className="buttonCrudUpdate">
+                <i className="fa-solid fa-arrows-rotate"></i>
+              </button>
+              <button className="buttonCrudDelete">
+                <i className="fa-solid fa-trash-can"></i>
+              </button>
+            </li>
+          </>
+        ))}
+      </ul>
     </>
   );
 };

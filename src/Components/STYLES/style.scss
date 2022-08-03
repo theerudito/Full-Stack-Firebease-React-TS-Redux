@@ -155,3 +155,77 @@ input {
   border: 1px solid silver;
   color: #357ae8;
 }
+
+.buttonCrudUpdate {
+  background-color: green;
+  width: 30px;
+
+  &:hover {
+    background-color: rgb(10, 241, 10);
+  }
+}
+
+.buttonCrudDelete {
+  background-color: rgb(138, 6, 6);
+
+  width: 30px;
+  &:hover {
+    background-color: red;
+  }
+}
+
+.containerFormCrud {
+  display: grid;
+  margin: auto;
+  background-color: #242424;
+}
+
+.containerUlCrud {
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: -75px;
+
+  li {
+    list-style: none;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-left: 50px;
+    gap: 10px;
+  }
+}
+
+.containerTitlesCrud {
+  background-color: #2c4163;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  height: 20px;
+  gap: 100px;
+  font-size: 10px;
+  p {
+    color: white;
+  }
+}
+
+.TitleUpload {
+  background-color: #2c4163;
+  color: #fff;
+}
+
+.imageUploadPrev {
+  width: 100px;
+  height: 100px;
+}
+
+.formUpLoad {
+  background-color: #242424;
+  margin: auto;
+}
+
+input[type="file"] {
+}

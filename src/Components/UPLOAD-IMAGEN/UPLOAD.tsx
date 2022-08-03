@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Storage } from "../HELPERS/API-FIREBASE";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { MENU } from "../MENU/MENU";
@@ -37,16 +37,27 @@ export const UPLOAD = () => {
 
   return (
     <>
-    <MENU/>
-      <p>UPLOAD</p>
-      <input type="file" onChange={(e) => setImageUpLoad(e.target.files[0])} />
-      <button onClick={upLoadFirebase}>UPLOAD IMAGE</button>
-      {
-        imageUrl.map((url: string, index) => {
-          return <img src={url} alt="img"  key={index}/>;
-        }
-        )
-      }
+      <MENU />
+      <p className="TitleUpload">UPLOAD</p>
+      <div className="containerUpload">
+        <form className="formUpLoad">
+          <input type="text" placeholder="NAME" />
+          <input type="text" placeholder="MARC" />
+          <input type="text" placeholder="DESCRIPTION" />
+          
+          <input
+            type="file"
+            name="choose_file"
+            className="inputUpload"
+            onChange={(e) => setImageUpLoad(e.target.files[0])}
+          />
+          <button onClick={upLoadFirebase}>UPLOAD IMAGE</button>
+        </form>
+      </div>
+
+      {/* {imageUrl.map((url: string, index) => {
+        return <img src={url} alt="img" className="imageUploadPrev" key={index} />;
+      })} */}
     </>
   );
 };
